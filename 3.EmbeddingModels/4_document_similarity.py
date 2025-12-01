@@ -20,9 +20,9 @@ query = 'tell me about bumrah'
 doc_embeddings = embedding.embed_documents(documents)
 query_embedding = embedding.embed_query(query)
 
-scores = cosine_similarity([query_embedding], doc_embeddings)[0]
+scores = cosine_similarity([query_embedding], doc_embeddings)[0]  //inside cosine_sim function you pass 2D vectors/arrays only and you get a similarity score in a 2D List so you can convert 2D list into simple list and store it in a variabl
 
-index, score = sorted(list(enumerate(scores)),key=lambda x:x[1])[-1]
+index, score = sorted(list(enumerate(scores)),key=lambda x:x[1])[-1] //enumerating the list with [index,score] form and then sorting the list on score and returning the last key value pair as sorting results are in ascending order
 
 print(query)
 print(documents[index])
