@@ -5,7 +5,7 @@ import numpy as np
 
 load_dotenv()
 
-embedding = OpenAIEmbeddings(model='text-embedding-3-large', dimensions=300)
+embedding = OpenAIEmbeddings(d)
 
 documents = [
     "Virat Kohli is an Indian cricketer known for his aggressive batting and leadership.",
@@ -15,7 +15,7 @@ documents = [
     "Jasprit Bumrah is an Indian fast bowler known for his unorthodox action and yorkers."
 ]
 
-query = 'tell me about bumrah'
+query = d
 
 doc_embeddings = embedding.embed_documents(documents)
 query_embedding = embedding.embed_query(query)
